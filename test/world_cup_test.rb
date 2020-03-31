@@ -35,7 +35,13 @@ class WorldCupTest < Minitest::Test
   def test_world_cup_teams
     world_cup = WorldCup.new(2018, [@france, @croatia])
 
-    assert_equal [@france, @croatia], world_cup.teams    
+    assert_equal [@france, @croatia], world_cup.teams
+  end
+
+  def test_active_players_by_position
+    world_cup = WorldCup.new(2018, [@france, @croatia])
+
+    assert_equal [@pogba, @modric], world_cup.active_players_by_position("midfielder")
   end
 
 end
